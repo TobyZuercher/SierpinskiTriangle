@@ -2,7 +2,9 @@ PShape s;
 
 void setup() {
   size(600, 600, P3D);
-  makeSierpinskiCube(0, 0, 600, s);
+  background(255);
+  camera(width/2.0+200, height/2.0-200, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
+  makeSierpinskiCube(300, 300, 50, s);
 }
 
 public void draw() {
