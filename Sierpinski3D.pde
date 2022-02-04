@@ -1,44 +1,38 @@
 PShape s;
 float xI, yI, cX, cY;
+int hY = 500;
 
 void setup() {
   size(600, 600, P3D);
   background(255);
-  camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
-  makeSierpinskiCube(0, 0, 50, s);
+  camera(width/2.0+200, height/2.0-200, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
+  makeSierpinskiCube(width/2, height/2, 50, s);
 }
 
 public void draw() {
     background(255);
-    makeSierpinskiCube(0, 0, 50, s);
+    makeSierpinskiCube(width/2, height/2, 50, s);
 }
 
 public void mousePressed() {
   xI = mouseX;
-  yI = mouseY;
+  //yI = mouseY;
 }
 
 public void mouseReleased() {
   cX += (xI-mouseX);
-  cY += (yI-mouseY);
+  //cY += (yI-mouseY);
+  //cY = cY >= hY ? hY : cY <= -hY ? -hY : cY;
 }
 
 public void mouseDragged() {
   float r = (height/2.0) / tan(PI*30.0 / 180.0);
-  float dX = ((xI-mouseX)+cX);
+  float dX = 2*((xI-mouseX)+cX);
   float mX = cos(dX/r)*r;
-  float dY = ((yI-mouseY)+cY);
-  float mY = cos(dY/r)*r;
+  //float dY = 2*((yI-mouseY)+cY);
+  //dY = dY >= hY ? hY : dY <= -hY ? -hY : dY;
+  //float mY = cos(dY/r)*r;
   float mZ = sin(dX/r)*r;
-  camera(width/2.0+200-mX, height/2.0+200, mZ, width/2.0, height/2.0, 0, 0, 1, 0);
-
-
-
-  /*pushMatrix();
-  background(255);
-  float r = (height/2.0) / tan(PI*30.0 / 180.0);
-  rotateY(-(xI-mouseX+cX)/r);
-  rotateX(-(yI-mouseY+cY)/r);
-  makeSierpinskiCube(0, 0, 50, s);
-  popMatrix();*/
+  System.out.println();
+  camera(width/2.0+200-mX, height/2.0-200, mZ, width/2.0, height/2.0, 0, 0, 1, 0);
 }
