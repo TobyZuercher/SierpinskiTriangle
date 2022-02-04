@@ -10,7 +10,8 @@ void setup() {
 }
 
 public void draw() {
-  
+    background(255);
+    makeSierpinskiCube(300, 300, 50, s);
 }
 
 public void mousePressed() {
@@ -24,7 +25,6 @@ public void mouseReleased() {
 }
 
 public void mouseDragged() {
-  background(255);
   float r = (height/2.0) / tan(PI*30.0 / 180.0);
   float dX = ((xI-mouseX)+cX);
   float mX = cos(dX/r)*r;
@@ -36,6 +36,7 @@ public void mouseDragged() {
 
 
   /*pushMatrix();
+  background(255);
   float r = (height/2.0) / tan(PI*30.0 / 180.0);
   rotateY(-(xI-mouseX+cX)/r);
   rotateX(-(yI-mouseY+cY)/r);
