@@ -25,22 +25,20 @@ public void mouseReleased() {
 
 public void mouseDragged() {
   background(255);
-  pushMatrix();
   float r = (height/2.0) / tan(PI*30.0 / 180.0);
-  rotateY(-(xI-mouseX+cX)/r);
-  rotateX(-(yI-mouseY+cY)/r);
-  makeSierpinskiCube(0, 0, 50, s);
-  popMatrix();
-  
-  
-  
-  
-  
-  /*float r = (height/2.0) / tan(PI*30.0 / 180.0);
   float dX = ((xI-mouseX)+cX);
   float mX = cos(dX/r)*r;
   float dY = ((yI-mouseY)+cY);
   float mY = cos(dY/r)*r;
   float mZ = sin(dX/r)*r;
-  camera(width/2.0+200-mX, height/2.0+200, mZ, width/2.0, height/2.0, 0, 0, 1, 0);*/
+  camera(width/2.0+200-mX, height/2.0+200, mZ, width/2.0, height/2.0, 0, 0, 1, 0);
+
+
+
+  /*pushMatrix();
+  float r = (height/2.0) / tan(PI*30.0 / 180.0);
+  rotateY(-(xI-mouseX+cX)/r);
+  rotateX(-(yI-mouseY+cY)/r);
+  makeSierpinskiCube(0, 0, 50, s);
+  popMatrix();*/
 }
