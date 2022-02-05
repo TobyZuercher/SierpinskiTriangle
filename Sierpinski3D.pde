@@ -11,6 +11,7 @@ void setup() {
 
 public void draw() {
     background(255);
+    box(200);
     makeSierpinskiCube(width/2, height/2, 50, s);
 }
 
