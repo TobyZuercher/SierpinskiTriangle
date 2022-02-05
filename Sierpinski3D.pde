@@ -6,13 +6,15 @@ void setup() {
   size(600, 600, P3D);
   background(255);
   camera(width/2.0+200, height/2.0-200, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
+  sierCube = createShape(GROUP);
   makeSierpinskiCube(width/2, height/2, 50, sierCube);
-  noLoop();
+  shape(sierCube);
 }
 
 public void draw() {
-    background(255);
-    makeSierpinskiCube(width/2, height/2, 50, sierCube);
+  background(255);
+  translate(height/2, width/2);
+  shape(sierCube);
 }
 
 public void mousePressed() {
