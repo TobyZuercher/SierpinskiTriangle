@@ -1,6 +1,6 @@
 public void makeSierpinskiCube(float x, float y, float z, float len, PShape s) {
   sierpinskiCube(x, y, z, len, s);
-  System.out.println(s.getChildCount());
+  System.out.println("There are " + s.getChildCount() + " total cubes");
 }
 
 public void sierpinskiCube(float x, float y, float z, float len, PShape s) {
@@ -15,7 +15,6 @@ public void sierpinskiCube(float x, float y, float z, float len, PShape s) {
 
 public PShape posCube(float x, float y, float z, float len) {
   PShape sC = createShape(GROUP);
-  //PShape s1, s2, s3, s4, s5, s6;
   noStroke();
   color col = color(x/2, 100, 100);
   //---------------------------------------- front side:
