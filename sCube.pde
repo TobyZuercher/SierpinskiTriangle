@@ -15,12 +15,11 @@ public void sierpinskiCube(float x, float y, float z, float len, PShape s) {
 
 public PShape posCube(float x, float y, float z, float len) {
   PShape sC = createShape(GROUP);
-  System.out.println(x);
-  PShape s1, s2, s3, s4, s5, s6;
+  //PShape s1, s2, s3, s4, s5, s6;
   noStroke();
   color col = color(x/2, 100, 100);
   //---------------------------------------- front side:
-  s1 = createShape(PShape.GEOMETRY);  
+  PShape s1 = createShape(PShape.GEOMETRY);  
   s1.beginShape();
   s1.vertex(x, y, z);
   s1.vertex(x+len, y, z);
@@ -29,7 +28,7 @@ public PShape posCube(float x, float y, float z, float len) {
   s1.endShape(CLOSE);
   s1.setFill(col);
   //---------------------------------------- top side:
-  s2 = createShape(PShape.GEOMETRY);
+  PShape s2 = createShape(PShape.GEOMETRY);
   s2.beginShape();
   s2.vertex(x, y, z);
   s2.vertex(x+len, y, z);
@@ -38,7 +37,7 @@ public PShape posCube(float x, float y, float z, float len) {
   s2.endShape(CLOSE);
   s2.setFill(col);
   //---------------------------------------- back side:
-  s3 = createShape(PShape.GEOMETRY);
+  PShape s3 = createShape(PShape.GEOMETRY);
   s3.beginShape();
   s3.vertex(x, y, z-len);
   s3.vertex(x+len, y, z-len);
@@ -47,7 +46,7 @@ public PShape posCube(float x, float y, float z, float len) {
   s3.endShape(CLOSE);
   s3.setFill(col);
   //---------------------------------------- bottom side:
-  s4 = createShape(PShape.GEOMETRY);
+  PShape s4 = createShape(PShape.GEOMETRY);
   s4.beginShape();
   s4.vertex(x, y+len, z);
   s4.vertex(x+len, y+len, z);
@@ -56,7 +55,7 @@ public PShape posCube(float x, float y, float z, float len) {
   s4.endShape(CLOSE);
   s4.setFill(col);
   //---------------------------------------- left side:
-  s5 = createShape(PShape.GEOMETRY);
+  PShape s5 = createShape(PShape.GEOMETRY);
   s5.beginShape();
   s5.vertex(x, y, z);
   s5.vertex(x, y, z-len);
@@ -65,7 +64,7 @@ public PShape posCube(float x, float y, float z, float len) {
   s5.endShape(CLOSE);
   s5.setFill(col);
   //---------------------------------------- right side:
-  s6 = createShape(PShape.GEOMETRY);
+  PShape s6 = createShape(PShape.GEOMETRY);
   s6.beginShape();
   s6.vertex(x+len, y, z);
   s6.vertex(x+len, y, z-len);
