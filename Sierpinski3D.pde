@@ -1,4 +1,4 @@
-PShape sierCube;
+//PShape sierCube;
 float xI, yI, cX, cY;
 int hY = 500;
 
@@ -7,7 +7,7 @@ void setup() {
   background(255);
   colorMode(HSB, 360, 100, 100);
   camera(width/2.0+200, height/2.0-150, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
-  sierCube = createShape(GROUP);
+  PShape sierCube = createShape(GROUP);
   makeSierpinskiCube(width/2, height/2, 0, 200, sierCube);
   shape(sierCube);
   colorMode(RGB);
@@ -23,7 +23,7 @@ public void draw() {
   
   pointLight(50, 50, 50, 0, 0, -200);
   translate(-100, -100, 100);
-  shape(sierCube);
+  //shape(sierCube);
 }
 
 public void mousePressed() {
