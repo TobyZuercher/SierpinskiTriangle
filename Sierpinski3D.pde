@@ -1,4 +1,4 @@
-PShape sierCube;
+PShape sierCube = new PShape();
 float xI, yI, cX, cY;
 int hY = 500;
 
